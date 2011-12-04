@@ -14,6 +14,7 @@ import urllib2
 import shutil
 import glob
 import tempfile
+import re
 
 try:
     import hashlib
@@ -129,7 +130,9 @@ def fix_bin_virtualenv():
 
     fo = open(bin_virtualenv, 'w')
     fo.write("#!/usr/bin/env python2\n")
-    fo.write(fi.read())
+    fil=fi.read()
+    re.sub(r'which python', r'which python2',fil)
+    fo.write(fil)
 
     fi.close()
     fo.close()
