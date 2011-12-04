@@ -134,7 +134,8 @@ def fix_bin_virtualenv():
 
     fi.close()
     fo.close()
-    
+
+def fix_virtualenv_wrapper():    
     bin_virtualenv = os.path.join(VENVBURRITO, "bin", "virtualenvwrapper.sh")
 
     fi = open(bin_virtualenv, 'r')
@@ -175,6 +176,7 @@ def upgrade_package(filename, name, version):
         if name in ['virtualenv', 'virtualenvwrapper']:
             fix_bin_virtualenv()
     finally:
+        fix_virtualenv_wrapper()
         os.chdir(owd or VENVBURRITO)
         shutil.rmtree(tmp)
 
