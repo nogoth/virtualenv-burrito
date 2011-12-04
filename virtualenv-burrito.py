@@ -176,7 +176,6 @@ def upgrade_package(filename, name, version):
         if name in ['virtualenv', 'virtualenvwrapper']:
             fix_bin_virtualenv()
     finally:
-        fix_virtualenv_wrapper()
         os.chdir(owd or VENVBURRITO)
         shutil.rmtree(tmp)
 
@@ -236,6 +235,7 @@ def handle_upgrade(selfupdated=False, firstrun=False):
         finally:
             if filename and os.path.exists(filename):
                 os.remove(filename)
+    fix_virtualenv_wrapper()
 
     # startup.sh needs to be created after selfupdate AND on install
     if selfupdated or firstrun:
