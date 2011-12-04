@@ -1,4 +1,4 @@
-# Virtualenv Burrito [![status](http://stillmaintained.com/brainsik/virtualenv-burrito.png)](http://stillmaintained.com/brainsik/virtualenv-burrito) #
+# Virtualenv Burrito [![status](http://stillmaintained.com/nogoth/virtualenv-burrito.png)](http://stillmaintained.com/nogoth/virtualenv-burrito) #
 
 With one command, have a working [virtualenv](http://pypi.python.org/pypi/virtualenv) +
 [virtualenvwrapper](http://pypi.python.org/pypi/virtualenvwrapper)
@@ -6,7 +6,7 @@ environment.
 
 ## Install ##
 
-    curl -s https://raw.github.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh | bash
+    curl -s https://raw.github.com/nogoth/virtualenv-burrito/master/virtualenv-burrito.sh | bash
 
 ## Use
 

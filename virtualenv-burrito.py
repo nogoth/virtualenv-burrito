@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # encoding: utf-8
 #
 #   virtualenv-burrito.py — manages the Virtualenv Burrito environment
@@ -31,7 +31,7 @@ except ImportError:  # Python < 2.4
 NAME = os.path.basename(__file__)
 VENVBURRITO = os.path.join(os.environ['HOME'], ".venvburrito")
 VENVBURRITO_LIB = os.path.join(VENVBURRITO, "lib")
-VERSIONS_URL = "https://raw.github.com/brainsik/virtualenv-burrito/master/versions.csv"
+VERSIONS_URL = "https://raw.github.com/nogoth/virtualenv-burrito/master/versions.csv"
 
 
 def get_installed_version(name):
@@ -68,7 +68,7 @@ def download(url, digest):
 
     print ("\nThe file %s didn't look like we expected.\n"
            "It may have been moved or tampered with. You should tell me:"
-           " @brainsik." % name)
+           " @nogoth." % name)
     try:
         os.remove(filename)
     except OSError:
@@ -128,7 +128,7 @@ def fix_bin_virtualenv():
     fi.readline()  # skip the hash bang
 
     fo = open(bin_virtualenv, 'w')
-    fo.write("#!/usr/bin/env python\n")
+    fo.write("#!/usr/bin/env python2\n")
     fo.write(fi.read())
 
     fi.close()
