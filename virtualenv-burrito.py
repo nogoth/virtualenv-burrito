@@ -130,8 +130,17 @@ def fix_bin_virtualenv():
 
     fo = open(bin_virtualenv, 'w')
     fo.write("#!/usr/bin/env python2\n")
-    fil=fi.read()
-    re.sub(r'which python', r'which python2',fil)
+    fo.write(fi.read())
+
+    fi.close()
+    fo.close()
+    
+    bin_virtualenv = os.path.join(VENVBURRITO, "bin", "virtualenvwrapper.sh")
+
+    fi = open(bin_virtualenv, 'r')
+    fil = fi.read()
+    fil = re.sub(r'which python', r'which python2',fil)
+    fo = open(bin_virtualenv, 'w')
     fo.write(fil)
 
     fi.close()
